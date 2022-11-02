@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/views/home/HomeView.vue'
 import MySupportsView from '@/views/supports/MySupportsView.vue'
+import ModulesAndLessonsView from '@/views/modules/ModulesAndLessonsView.vue'
 
 const routes = [
     {
@@ -8,13 +9,18 @@ const routes = [
         component: () => import('@/layouts/DefaultTemplate.vue'),
         children: [
             {
+                path: 'modulos',
+                name: 'campus.modules',
+                component: ModulesAndLessonsView
+            },
+            {
                 path: 'minhas-duvidas',
-                name: 'Campus.my.supports',
+                name: 'campus.my.supports',
                 component: MySupportsView
             },
             {
                 path: '',
-                name: 'Campus.home',
+                name: 'campus.home',
                 component: HomeView
             }
         ]

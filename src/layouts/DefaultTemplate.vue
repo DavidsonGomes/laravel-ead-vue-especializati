@@ -1,12 +1,12 @@
 <template>
     <div>
-        <HeaderComponent />
+        <header-component />
 
         <section>
             <router-view></router-view>
         </section>
 
-        <FooterComponent />
+        <footer-component />
     </div>
 </template>
 

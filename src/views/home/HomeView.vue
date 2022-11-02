@@ -1,16 +1,9 @@
 <template>
-  <div class="pageTitle">
-    <span class="title">Meus Cursos</span>
-    <span class="dots">
-      <span></span>
-      <span></span>
-      <span></span>
-    </span>
-  </div>
+  <page-title-component :pageTitle="'Meus Cursos'" />
 
   <div class="content">
     <ul class="listCourses">
-      <CardCourseComponent
+      <card-course-component
         :title="'Curso LaraFood + VueFood + FlutterFood'"
         :image="''"
         :bgName="'laravel'"
@@ -20,11 +13,13 @@
 </template>
 
 <script>
+import PageTitleComponent from "@/components/PageTitleComponent.vue";
 import CardCourseComponent from "@/views/home/components/CardCourseComponent.vue";
 
 export default {
   name: "HomeView",
   components: {
+    PageTitleComponent,
     CardCourseComponent,
   },
 };
