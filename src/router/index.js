@@ -2,6 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/views/home/HomeView.vue'
 import MySupportsView from '@/views/supports/MySupportsView.vue'
 import ModulesAndLessonsView from '@/views/modules/ModulesAndLessonsView.vue'
+import LoginView from '@/views/auth/LoginView.vue'
+import ForgotPassword from '@/views/auth/ForgotPasswordView.vue'
 
 const routes = [
     {
@@ -22,6 +24,22 @@ const routes = [
                 path: '',
                 name: 'campus.home',
                 component: HomeView
+            }
+        ]
+    },
+    {
+        path: '/',
+        component: () => import('@/layouts/AuthTemplate.vue'),
+        children: [
+            {
+                path: '',
+                name: 'auth.login',
+                component: LoginView
+            },
+            {
+                path: '/esqueci-minha-senha',
+                name: 'auth.forgot.password',
+                component: ForgotPassword
             }
         ]
     }
